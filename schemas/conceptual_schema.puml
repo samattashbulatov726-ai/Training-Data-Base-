@@ -1,0 +1,38 @@
+@startuml
+!theme plain
+title Концептуальная схема
+
+left to right direction
+skinparam linetype ortho
+
+entity Country
+entity User
+entity Plan
+entity Subscription
+entity Payment
+entity Movie
+entity Genre
+entity MovieGenre
+entity Person
+entity Cast
+entity Watch
+entity Review
+
+Country ||--o{ User : has
+User ||--o{ Subscription : has
+Plan ||--o{ Subscription : provides
+Subscription ||--o{ Payment : generates
+
+Movie ||--o{ MovieGenre : belongs_to
+Genre ||--o{ MovieGenre : contains
+
+Movie ||--o{ Cast : has
+Person ||--o{ Cast : participates
+
+User ||--o{ Watch : makes
+Movie ||--o{ Watch : is_watched
+
+User ||--o{ Review : writes
+Movie ||--o{ Review : receives
+
+@enduml
