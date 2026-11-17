@@ -1,12 +1,7 @@
--- Загрузка данных из CSV в базу cinema.
--- Запускать из КОРНЯ репозитория (пути к CSV относительные):
---   psql -U postgres -d cinema -f base_part/02_load_data.sql
--- Предварительно должны быть выполнены 00_create_database.sql и 01_create_tables.sql.
--- \copy выполняется на стороне клиента, поэтому права суперпользователя на сервере не нужны.
+
 
 BEGIN;
 
--- Порядок загрузки учитывает внешние ключи: сначала справочники, затем зависимые таблицы.
 \copy country      (country_id, iso_code, name)                                                          FROM 'data/country.csv'      WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
 \copy plan         (plan_id, name, price, max_screens, max_resolution)                                   FROM 'data/plan.csv'         WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
 \copy genre        (genre_id, name)                                                                      FROM 'data/genre.csv'        WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
@@ -20,8 +15,6 @@ BEGIN;
 \copy watch        (watch_id, user_id, movie_id, started_at, watched_seconds, is_finished)               FROM 'data/watch.csv'        WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
 \copy review       (review_id, user_id, movie_id, rating, review_text, created_at)                       FROM 'data/review.csv'       WITH (FORMAT csv, HEADER true, ENCODING 'UTF8')
 
--- Идентификаторы загружены явно, поэтому сдвигаем последовательности identity,
--- иначе следующий INSERT без id упадёт на дубликате первичного ключа.
 SELECT setval(pg_get_serial_sequence('country',      'country_id'),      (SELECT MAX(country_id)      FROM country));
 SELECT setval(pg_get_serial_sequence('plan',         'plan_id'),         (SELECT MAX(plan_id)         FROM plan));
 SELECT setval(pg_get_serial_sequence('genre',        'genre_id'),        (SELECT MAX(genre_id)        FROM genre));
@@ -35,7 +28,6 @@ SELECT setval(pg_get_serial_sequence('review',       'review_id'),       (SELECT
 
 COMMIT;
 
--- Проверка: число строк в каждой таблице (требование - не менее 50).
 SELECT 'country' AS tbl, COUNT(*) AS cnt FROM country
 UNION ALL SELECT 'plan',         COUNT(*) FROM plan
 UNION ALL SELECT 'genre',        COUNT(*) FROM genre
