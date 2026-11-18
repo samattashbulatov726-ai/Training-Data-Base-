@@ -1,0 +1,53 @@
+genre_id,name
+1,Action
+2,Adventure
+3,Animation
+4,Biography
+5,Comedy
+6,Crime
+7,Documentary
+8,Drama
+9,Family
+10,Fantasy
+11,History
+12,Horror
+13,Music
+14,Musical
+15,Mystery
+16,Romance
+17,Sci-Fi
+18,Sport
+19,Thriller
+20,War
+21,Western
+22,Cyberpunk
+23,Space Opera
+24,Post-Apocalyptic
+25,Superhero
+26,Martial Arts
+27,Heist
+28,Noir
+29,Dark Comedy
+30,Romantic Comedy
+31,Psychological Thriller
+32,Political Drama
+33,Legal Drama
+34,Medical Drama
+35,Coming-of-Age
+36,Road Movie
+37,Disaster
+38,Spy
+39,Survival
+40,Slasher
+41,Supernatural
+42,Folk Horror
+43,Mockumentary
+44,Satire
+45,Anime
+46,Courtroom
+47,Time Travel
+48,Zombie
+49,Found Footage
+50,Historical Epic
+51,Fairy Tale
+52,Buddy Comedy
