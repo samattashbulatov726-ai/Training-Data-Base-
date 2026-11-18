@@ -1,0 +1,64 @@
+country_id,iso_code,name
+1,RU,Russia
+2,US,United States
+3,GB,United Kingdom
+4,DE,Germany
+5,FR,France
+6,IT,Italy
+7,ES,Spain
+8,PT,Portugal
+9,NL,Netherlands
+10,BE,Belgium
+11,CH,Switzerland
+12,AT,Austria
+13,SE,Sweden
+14,NO,Norway
+15,DK,Denmark
+16,FI,Finland
+17,PL,Poland
+18,CZ,Czechia
+19,SK,Slovakia
+20,HU,Hungary
+21,RO,Romania
+22,BG,Bulgaria
+23,GR,Greece
+24,TR,Turkey
+25,UA,Ukraine
+26,BY,Belarus
+27,KZ,Kazakhstan
+28,UZ,Uzbekistan
+29,AM,Armenia
+30,GE,Georgia
+31,AZ,Azerbaijan
+32,EE,Estonia
+33,LV,Latvia
+34,LT,Lithuania
+35,IE,Ireland
+36,IS,Iceland
+37,CA,Canada
+38,MX,Mexico
+39,BR,Brazil
+40,AR,Argentina
+41,CL,Chile
+42,CO,Colombia
+43,PE,Peru
+44,CN,China
+45,JP,Japan
+46,KR,South Korea
+47,IN,India
+48,ID,Indonesia
+49,TH,Thailand
+50,VN,Vietnam
+51,PH,Philippines
+52,MY,Malaysia
+53,SG,Singapore
+54,AU,Australia
+55,NZ,New Zealand
+56,ZA,South Africa
+57,EG,Egypt
+58,MA,Morocco
+59,NG,Nigeria
+60,KE,Kenya
+61,AE,United Arab Emirates
+62,IL,Israel
+63,SA,Saudi Arabia
